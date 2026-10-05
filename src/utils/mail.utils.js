@@ -14,7 +14,7 @@ export async function sendEmailTo(to,subject,message) {
         from :ConfigDet.user,
         to:to,
         subject:subject,
-        text:message
+        html:message
 
     })
     console.log("Email Sent")
