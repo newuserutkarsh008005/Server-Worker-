@@ -4,13 +4,13 @@ import ConfigDet from "./env.config.js";
 const db = async () => {
     try {
         await mongoose.connect(ConfigDet.MongoUrl, {
-            serverSelectionTimeoutMS: 5000,
-            directConnection: true
+            family: 4,
+            serverSelectionTimeoutMS: 10000,
+            connectTimeoutMS: 10000
         });
 
-        console.log("Mongo Db Connected Successfully");
-    }
-    catch (e) {
+        console.log("✅ Mongo Db Connected Successfully");
+    } catch (e) {
         console.error("❌ Mongo error to connect");
         console.error(e);
     }
